@@ -10,7 +10,6 @@ export const StyledInputRoot = styled("div")(
   color: ${theme.palette.text.primary};
   background: ${theme.palette.background.default};
   border: 1px solid ${theme.palette.divider};
-  borderRadious: 8px;
   box-shadow: 0 2px 4px ${
     theme.palette.mode === "dark" ? "rgba(0,0,0, 0.5)" : "rgba(0,0,0, 0.05)"
   };
@@ -20,8 +19,6 @@ export const StyledInputRoot = styled("div")(
   overflow: hidden;
   column-gap: 8px;
   padding: 4px;
-  
-  
 
   &.${numberInputClasses.focused} {
     border-color: ${theme.palette.primary.light};
@@ -39,7 +36,7 @@ export const StyledInputRoot = styled("div")(
 );
 
 export const StyledInputElement = styled("input")(
-  ({ theme }) => `
+  ({ theme }: { theme: Theme }) => `
   font-size: 0.875rem;
   font-family: ${theme.typography.fontFamily};
   font-weight: 400;
@@ -52,12 +49,11 @@ export const StyledInputElement = styled("input")(
   border-radius: inherit;
   padding: 8px 12px;
   outline: 0;
-  
 `
 );
 
 export const StyledButton = styled("button")(
-  ({ theme }) => `
+  ({ theme }: { theme: Theme }) => `
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
